@@ -14,6 +14,7 @@ To run: ./search [directory] [-S] [-s <size>] [-f <pattern> <depth>]
 #include <dirent.h>
 #include <time.h>
 #include <getopt.h>
+#include <sys/types.h>
 
 // Structure to hold command-line options
 typedef struct {
