@@ -1,0 +1,36 @@
+# Makefile for Lab 5 - Ethan Wylie eowylie
+# CS 332
+
+CC = gcc
+CFLAGS = -Wall -Wextra -std=c99
+TARGET = lab5
+SOURCE = lab5.c
+
+# Default target
+all: $(TARGET)
+
+# Compile the main program
+$(TARGET): $(SOURCE)
+	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
+
+# Clean up compiled files
+clean:
+	rm -f $(TARGET) *.o
+
+# Test the program with current directory
+test: $(TARGET)
+	./$(TARGET) .
+
+# Test with a specific directory (if it exists)
+test-home: $(TARGET)
+	./$(TARGET) $(HOME)
+
+# Install target (copy to /usr/local/bin - requires sudo)
+install: $(TARGET)
+	sudo cp $(TARGET) /usr/local/bin/
+
+# Uninstall target
+uninstall:
+	sudo rm -f /usr/local/bin/$(TARGET)
+
+.PHONY: all clean test test-home install uninstall
