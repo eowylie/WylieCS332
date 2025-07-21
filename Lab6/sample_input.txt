@@ -1,0 +1,7 @@
+uname -a
+date
+whoami
+ls -la
+echo "Hello, World!"
+sleep 2
+ps aux
