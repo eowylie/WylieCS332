@@ -12,6 +12,7 @@ all: $(TARGET)
 # Build the main executable
 $(TARGET): $(SOURCE)
 	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
+	chmod +x $(TARGET)
 
 # Clean target to remove compiled files
 clean:
