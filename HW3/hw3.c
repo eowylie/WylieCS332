@@ -2,8 +2,8 @@
 Name: Ethan Wylie
 BlazerId: eowylie
 Project #: 3
-To compile: 
-To run: 
+To compile: make
+To run: ./hw3 <directory_name>
 */ 
 #include <stdio.h>
 #include <stdlib.h>
