@@ -17,9 +17,5 @@ $(TARGET): $(SOURCE)
 clean:
 	rm -f $(TARGET)
 
-# Install target (optional)
-install: $(TARGET)
-	cp $(TARGET) /usr/local/bin/
-
 # Phony targets
-.PHONY: all clean install
+.PHONY: all clean
