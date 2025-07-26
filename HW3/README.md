@@ -46,12 +46,11 @@ The program handles the following conditions:
 - Empty directories
 - Permission issues
 
-TESTING EDGE CASES:
+EDGE CASES I TESTED:
 ==================
-- Empty files (word count = 0)
+- Empty text files
 - Directories with no files
-- Non-text files (shows "N/A" for word count)
-- Directories that don't exist
+- Non-text files
 - Mixed file types in directory
 
 FILES INCLUDED:
