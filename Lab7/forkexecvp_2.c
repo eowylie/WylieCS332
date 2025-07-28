@@ -44,14 +44,14 @@ static void sig_child(int signo) {
     signal(signo, sig_child);
 }
 
-// Signal handler for SIGINT (Control-C) - ignore in parent 
+// Signal handler for SIGINT
 static void sig_int(int signo) {
     printf("\nParent: Received SIGINT (Control-C), but ignoring it.\n");
     printf("Child process may be affected. Use Control-\\ to quit parent.\n");
     signal(signo, sig_int);  /* Reinstall handler */
 }
 
-// Signal handler for SIGTSTP (Control-Z) - ignore in parent 
+// Signal handler for SIGTSTP
 static void sig_tstp(int signo) {
     printf("\nParent: Received SIGTSTP (Control-Z), but ignoring it.\n");
     printf("Child process may be suspended. Use Control-\\ to quit parent.\n");
@@ -111,9 +111,9 @@ int main(int argc, char **argv) {
         printf("Use Control-C or Control-Z to send signals to child\n");
         printf("Use Control-\\ to terminate parent process\n");
         
-        // Wait indefinitely for signals - the SIGCHLD handler will process child termination 
+        // Wait for signals - the SIGCHLD handler will process child termination 
         while (1) {
-            pause();  // Wait for signals 
+            pause();
         }
         
     } else { 
