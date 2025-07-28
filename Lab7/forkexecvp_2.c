@@ -1,4 +1,6 @@
-/* To Compile: gcc -Wall -o forkexecvp_2 forkexecvp_2.c
+/* Lab 7 - CS332
+ * Ethan Wylie - eowylie
+ * To Compile: gcc -Wall -o forkexecvp_2 forkexecvp_2.c
  * To Run: ./forkexecvp_2 <command> [args]
  */
 #include <stdio.h>
