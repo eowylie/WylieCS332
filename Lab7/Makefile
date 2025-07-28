@@ -4,8 +4,8 @@
 
 CC = gcc
 CFLAGS = -Wall -g
-TARGET = forkexecvp_modified
-SOURCE = forkexecvp_modified.c
+TARGET = forkexecvp_2
+SOURCE = forkexecvp_2.c
 
 # Default target
 all: $(TARGET)
