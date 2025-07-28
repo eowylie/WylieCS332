@@ -1,5 +1,5 @@
 /* To Compile: gcc -Wall -o forkexecvp_modified forkexecvp_modified.c
- * To Run: ./forkexecvp_modified <command> [args]
+ * To Run: ./forkexecvp_2 <command> [args]
  */
 #include <stdio.h>
 #include <stdlib.h>
