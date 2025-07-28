@@ -14,12 +14,12 @@ pid_t child_pid = 0;  // Store child PID
 static void sig_quit(int signo) {
     printf("\nReceived SIGQUIT. Terminating parent process...\n");
     if (child_pid > 0) {
-        kill(child_pid, SIGTERM);  // Terminate child if still running
+        kill(child_pid, SIGTERM);  // Terminate child if running
     }
     exit(0);
 }
 
-// Signal handler for SIGCHLD - when child process changes state
+// Signal handler for SIGCHLD
 static void sig_child(int signo) {
     int status;
     pid_t pid;
@@ -47,14 +47,14 @@ static void sig_child(int signo) {
 // Signal handler for SIGINT
 static void sig_int(int signo) {
     printf("\nParent: Received SIGINT (Control-C), but ignoring it.\n");
-    printf("Child process may be affected. Use Control-\\ to quit parent.\n");
-    signal(signo, sig_int);  /* Reinstall handler */
+    printf("Child process interrupted. Use Control-\\ to quit parent.\n");
+    signal(signo, sig_int);  // Reinstall handler
 }
 
 // Signal handler for SIGTSTP
 static void sig_tstp(int signo) {
     printf("\nParent: Received SIGTSTP (Control-Z), but ignoring it.\n");
-    printf("Child process may be suspended. Use Control-\\ to quit parent.\n");
+    printf("Child process suspended. Use Control-\\ to quit parent.\n");
     signal(signo, sig_tstp);  // Reinstall handler 
 }
 
@@ -92,7 +92,7 @@ int main(int argc, char **argv) {
     
     if (child_pid == 0) { 
         // This is the child process 
-        // Reset signal handlers to default behavior in child 
+        // Reset signal handlers
         signal(SIGINT, SIG_DFL);
         signal(SIGTSTP, SIG_DFL);
         signal(SIGQUIT, SIG_DFL);
